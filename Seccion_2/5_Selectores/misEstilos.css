@@ -1,0 +1,15 @@
+body{
+    background-color: bisque;
+}
+
+.principal{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#information{
+    background-color: gold;
+}
+
+h1:hover{
+    color: red;
+}
