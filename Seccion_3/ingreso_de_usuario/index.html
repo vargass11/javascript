@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Texto</title>
+    </head>
+
+    <body>
+        <input type="text" id="inputTexto">
+        <button onclick="MostrarTexto()">Texto</button>
+
+        <script>
+            function MostrarTexto(){
+                let MostrarTexto = document.getElementById(inputTexto)
+                alert("El texto es " + inputTexto.value)
+            }
+        </script>
+    </body>
