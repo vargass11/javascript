@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador Regresivo</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #contador {
+            font-size: 2em;
+            margin: 20px;
+        }
+        button {
+            font-size: 1em;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Contador Regresivo</h1>
+    <div id="Contador">30</div><!--Muestra el tiempo restante-->
+    <button onclick="iniciarContador()">Iniciar</button>
+    <button onclick="detenerContador()">Detener</button>
+    <button onclick="reinicarContador()">Reiniciar</button>
+
+    <script>
+        let tiempo = 30; // Tiempo inicial en segundos 
+        let intervalo; // Variable para almacenar el ID del setInterval
+        // Funcion para actualizar la pantalla con el tiempo actual
+        function actualizarContador() {
+            if (tiempo > 0) {
+            tiempo--; // Reducimos el tiempo en 1 segundo 
+            console.log (tiempo)
+            actualizarContador (); // actualizamos la pantalla
+        } else {
+            detenerContador (); // Detenemos el contador al llegar a 0 
+            alert ("¡Tiempo terminado!"); // Mostramos un mensaje
+        }
+    }
+    // Funcion para iniciar el contador 
+    function iniciarContador() {
+        clearInterval (intervalo); // Detiene el setInerval
+        intervalo = null; // Reinicia la variable para permitir un nuevo inicio 
+    }
+
+    //Funcion para reiniciar el contador a 30 segundos 
+    function reiniciarContador () {
+        detenerContador () ; // Primero detenemos cualquier intervalo activo 
+        tiempo = 30; // Reiniciamos el tiempo a 30 segundos
+        actualizarContador (); // Mostramos el nuevo tiempo en pantalla
+        }
+
+        actualizarContador (); // Muestra 30 segundos al inicio 
+    
+    </script>
+    
+</body>
+</html>

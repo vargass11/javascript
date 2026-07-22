@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+            <link rel="stylesheet" href="misEstilos.css">
+                                <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,0">
+        <title>Cotidiano Juego de Preguntas</title>
+    </head>
+     
+    <body onload="iniciarContador()">
+        <p><h1>Contesta las siguentes preguntas</h1></p>
+        <p><h2>¡Recuerda que tienes tiempo!</h2></p>
+        <p>¿Cuál es el planeta más cercano al Sol?</p>
+        <input type="text"id=primeraPregunta>
+        <p>¿Quién pintó la Mona Lisa?</p>
+        <input type="text"id=segundaPregunta>
+        <p>¿Cuál es el río más largo del mundo?</p>
+        <input type="text"id=terceraPregunta>
+        <p>¿En qué país se encuentra la Torre Eiffel?</p>
+        <input type="text"id=cuartaPregunta>
+        <p>¿Quién escribió “Cien años de soledad”?</p>
+        <input type="text"id=quintaPregunta>
+        <div id="contador">30</div>
+        <button onclick="detenerContador()">Termine</button>
+        <button onclick="reiniciarContador()">Volver a intentar</button>
+
+        <script>
+            let tiempo = 30;
+            let intervalo;
+            
+            function actualizarContador(){
+                document.getElementById("contador").textContent = tiempo;
+            }
+            function contar(){
+            if (tiempo > 0) {
+                tiempo--;
+                console.log(tiempo);
+                actualizarContador();
+            } else {
+                detenerContador();
+                alert("Game Over");
+            }
+            }
+
+            function detenerContador(){
+            if (intervalo){
+            intervalo = null
+            alert ("Intervalo")
+            }
+            }
+            function reinicarContador(){
+                detenerContador();
+                tiempo = 30;
+                actualizarContador();
+                if(intervalo){
+                intervalo = setInterval(contar,1000);
+                }
+            }
+
+            actualizarContador();
+            
+        </script>
+        
+     </body>
+</html>
