@@ -1,37 +1,31 @@
 <!DOCTYPE html>
-<html lang="es">
-            <link rel="stylesheet" href="misEstilos.css">
-                                <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1,0">
-        <title>Cotidiano Juego de Preguntas</title>
-    </head>
-     
-    <body onload="iniciarContador()">
-        <p><h1>Contesta las siguentes preguntas</h1></p>
-        <p><h2>¡Recuerda que tienes tiempo!</h2></p>
-        <p>¿Cuál es el planeta más cercano al Sol?</p>
-        <input type="text"id=primeraPregunta>
-        <p>¿Quién pintó la Mona Lisa?</p>
-        <input type="text"id=segundaPregunta>
-        <p>¿Cuál es el río más largo del mundo?</p>
-        <input type="text"id=terceraPregunta>
-        <p>¿En qué país se encuentra la Torre Eiffel?</p>
-        <input type="text"id=cuartaPregunta>
-        <p>¿Quién escribió “Cien años de soledad”?</p>
-        <input type="text"id=quintaPregunta>
-        <div id="contador">30</div>
-        <button onclick="detenerContador()">Termine</button>
-        <button onclick="reiniciarContador()">Volver a intentar</button>
+<head>
+    <title>Cotidiano 3</title>
+    <Link rel="stylesheet" href="misEstilos.css">
+</head>
+<meta charset="UTF-8">
+<body onload="iniciarContador()">
+     <p>Que pocision juega Messi?</p>
+    <input type="text"id=primeraPregunta>
+      <p>Cual es el juego que mas copias a vendido</p>
+    <input type="text"id=segundaPregunta    >
+      <p>Nombre de el mejor jugador en el mundo</p>
+    <input type="text"id=terceraPregunta>
+      <p>Air Jordan le pertenece a Nike o a Adidas?</p>
+    <input type="text"id=cuartaPregunta>
+      <p>Quien pinto la Mona Lisa?</p>
+    <input type="text"id=quintaPregunta>
+    <div id="contador">30</div>
+    <button onclick="detenerContador()">Termine</button>
+    <button onclick="reiniciarContador()">Volver a intentar</button>
 
-        <script>
-            let tiempo = 30;
-            let intervalo;
-            
-            function actualizarContador(){
-                document.getElementById("contador").textContent = tiempo;
-            }
-            function contar(){
+    <script>
+        let tiempo = 30;
+        let intervalo;
+        function actualizarContador() {
+            document.getElementById("contador").textContent = tiempo;
+        }
+        function contar() {
             if (tiempo > 0) {
                 tiempo--;
                 console.log(tiempo);
@@ -39,27 +33,33 @@
             } else {
                 detenerContador();
                 alert("Game Over");
+                
             }
-            }
+        }
 
-            function detenerContador(){
-            if (intervalo){
+        function iniciarContador() {
+            if(!intervalo) {
+            intervalo = setInterval(contar, 1000);
+            }
+        }
+
+        function detenerContador() {
+            clearInterval(intervalo);
             intervalo = null
-            alert ("Intervalo")
-            }
-            }
-            function reinicarContador(){
-                detenerContador();
-                tiempo = 30;
-                actualizarContador();
-                if(intervalo){
-                intervalo = setInterval(contar,1000);
-                }
-            }
+              alert(new Date().toLocaleDateString('es-ES') + "\n"
+               + primeraPregunta.value + "\n"
+                + segundaPregunta.value + "\n" 
+                + terceraPregunta.value + "\n" 
+                + cuartaPregunta.value + "\n" 
+                + quintaPregunta.value +"\n")
+             
+        }
 
-            actualizarContador();
-            
-        </script>
-        
-     </body>
-</html>
+        function reiniciarContador() {
+           location.reload();
+        }
+
+         
+        actualizarContador();
+</script>
+</body>
