@@ -1,9 +1,108 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Calculadora</title>
-    </head>
-    <body>
-        function 
-    </body>
-</html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cotidiano Calculadora</title>
+    <style>
+       
+   
+     </style>
+     <link rel="stylesheet" href="misEstilos.css">
+</head>
+<body>
+
+    <div class="caja">
+        <h1>Calculadora</h1>
+
+        <div class="inputs">
+            <input type="number" id="num1" placeholder="Número 1">
+            <input type="number" id="num2" placeholder="Número 2">
+        </div>
+
+        <div class="botones">
+            <button onclick="sumar()">+</button>
+            <button onclick="restar()">-</button>
+            <button onclick="multiplicar()">x</button>
+            <button onclick="dividir()">/</button>
+
+            <button onclick="raiz()">Raíz</button>
+            <button onclick="potencia()">Potencia</button>
+
+            <button onclick="absoluto()">Absoluto</button>
+            <button onclick="random()">Random</button>
+        </div>
+
+        <h2>Resultado</h2>
+        <input type="text" id="resultado" readonly placeholder="0">
+    </div>
+
+    <script>
+
+        function mostrarResultado(resultado){
+            document.getElementById("resultado").value = resultado;
+        }
+
+       
+        function sumar(){
+            let numero1 = Number(document.getElementById("num1").value);
+            let numero2 = Number(document.getElementById("num2").value);
+            let resultado = numero1 + numero2;
+            mostrarResultado(resultado);
+        }
+
+        function restar(){
+            let numero1 = Number(document.getElementById("num1").value);
+
+            let numero2 = Number(document.getElementById("num2").value);
+            let resultado = numero1 - numero2;
+            mostrarResultado(resultado);
+        }
+
+        function multiplicar(){
+            let numero1 = Number(document.getElementById("num1").value);
+
+            let numero2 = Number(document.getElementById("num2").value);
+            let resultado = numero1 * numero2;
+            mostrarResultado(resultado);
+        }
+
+        function dividir(){
+            let numero1 = Number(document.getElementById("num1").value);
+
+            let numero2 = Number(document.getElementById("num2").value);
+            if (n2 === 0) {
+                mostrarResultado("Error: /0");
+            } else {
+                let resultado = numero1 / numero2;
+                mostrarResultado(resultado);
+            }
+        }
+
+        function raiz(){
+            let n1 = Number(document.getElementById("num1").value);
+            let resultado = Math.sqrt(n1);
+            mostrarResultado(resultado);
+        }
+
+        function potencia(){
+            let n1 = Number(document.getElementById("num1").value);
+
+            let n2 = Number(document.getElementById("num2").value);
+            let resultado = Math.pow(n1, n2);
+            mostrarResultado(resultado);
+        }
+
+        function absoluto(){
+            let n1 = Number(document.getElementById("num1").value);
+            let resultado = Math.abs(n1);
+            mostrarResultado(resultado);
+        }
+
+        function random(){
+            let resultado = Math.floor(Math.random() * 100) + 1;
+            mostrarResultado(resultado);
+        }
+
+         </script>
+         </body>
+        </html>

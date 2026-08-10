@@ -1,0 +1,126 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+div.caja {
+    background-color: #111111; 
+    width: 320px;              
+    padding: 20px;
+    border-radius: 24px;       
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+div.caja h1 {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+
+div.caja h2 {
+    color: #aaaaaa;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+
+div.inputs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+
+div.inputs input[type="number"] {
+    width: 50%;
+    padding: 12px;
+    background-color: #222222;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+}
+
+
+#resultado {
+    width: 100%;
+    padding: 15px;
+    background-color: #222222;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    color: #00ff88; 
+    font-size: 26px;
+    text-align: right;
+    font-weight: bold;
+    outline: none;
+}
+
+
+div.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px;                             
+    margin-top: 10px;
+}
+
+
+div.botones button {
+    width: 100%;
+    height: 55px; 
+    background-color: #333333; 
+    color: #ffffff;
+    border: none;
+    border-radius: 12px; 
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.1s;
+}
+
+
+div.botones button:hover {
+    background-color: #444444;
+}
+
+
+div.botones button:nth-child(-n+4) {
+    background-color: #ff9f0a; 
+    color: #ffffff;
+    font-size: 20px;
+}
+
+div.botones button:nth-child(-n+4):hover {
+    background-color: #cc7a00;
+}
+
+
+div.botones button:nth-child(n+5) {
+    background-color: #555555; 
+    font-size: 13px; 
+}
+
+div.botones button:nth-child(n+5):hover {
+    background-color: #666666;
+}
