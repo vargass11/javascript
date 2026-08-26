@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prácticas Condicionales</title>
+    <script src="misScripts2.js"></script>
+</head>
+<body>
+
+    <h1>Evaluar parametro</h1>
+    
+ 
+    <button onclick="capturarYEnviar()">Enviar</button>
+    <input type="number" id="numero">
+
+    <script>
+         function capturarYEnviar() {
+            let numero = Number(document.getElementById("numeroUsuario").value);
+            evaluarParametro(numero);
+        }
+
+        
+        function evaluarParametro(valor) {
+           
+            if (valor === 1) {
+                alert("Hola mundo");
+            }
+        }
+    </script>
+
+</body>
+</html>

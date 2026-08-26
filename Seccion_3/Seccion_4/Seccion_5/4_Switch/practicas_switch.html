@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prácticas: Switch 1</title>
+</head>
+<body>
+
+    <h2>Escribe la fruta</h2>
+    
+    <p>
+        <input type="text" id="textoFruta" placeholder="manzana, naranja...">
+    </p>
+
+    <h2>Evaluar parametro</h2>
+
+    <p>
+        <button onclick="capturarYEvaluar()">Enviar</button>
+    </p>
+
+    <script>
+        
+        function capturarYEvaluar() {
+           
+            let frutaIngresada = document.getElementById("textoFruta").value.toLowerCase();
+            evaluarFruta(frutaIngresada);
+        }
+
+        
+        function evaluarFruta(fruta) {
+            let mensaje = "";
+
+            switch (fruta) {
+                case "manzana":
+                    mensaje = "El precio de la fruta es manzana es: 15";
+                    break;
+                case "naranja":
+                    mensaje = "El precio de la fruta es naranja es: 20";
+                    break;
+                case "banana":
+                    mensaje = "El precio de la fruta es banana es: 25";
+                    break;
+                default:
+                    mensaje = "Fruta no encontrada en la lista.";
+                    break;
+            }
+
+            alert(mensaje);
+        }
+    </script>
+
+</body>
+</html>
