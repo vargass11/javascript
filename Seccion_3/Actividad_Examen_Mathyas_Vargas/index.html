@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="misEstilos.css"
+    <meta charset="UTF-8">
+    <title>Actividad Examen</title>
+
+</head>
+<body>
+<script src="misScripts.js"></script>
+
+
+    <div class="principal">
+        <h2>Recomendaciones Recreativas</h2>
+        
+        <div class="input-group">
+            <label>Presupuesto disponible (₡):</label>
+            <input type="number" id="plata">
+        </div>
+
+        <div class="input-group">
+            <label>Cantidad de personas:</label>
+            <input type="number" id="num_personas">
+        </div>
+
+        <div class="input-group">
+            <label>Tipo de actividad:</label>
+            <select id="tipo_act">
+                <option value="">Elige tu Actividad</option>
+                <option value="Deportes">Deportes</option>
+                <option value="Entretenimiento">Entretenimiento</option>
+                <option value="Turismo">Turismo</option>
+                <option value="Actividades familiares">Actividades familiares</option>
+            </select>
+        </div>
+
+        <div class="btn-box">
+            <button type="button" onclick="hacerCalculos()">Recomendar</button>
+            <button type="button" onclick="limpiarTodo()">Limpiar</button>
+        </div>
+
+        <div id="error-div" class="txt-error"></div>
+
+        <div id="pantalla-resultado"></div>
+    </div>
+   

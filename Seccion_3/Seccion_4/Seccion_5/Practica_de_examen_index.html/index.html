@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recomendador de Películas</title>
+</head>
+<body>
+
+    <h1>Recomendador de Películas</h1>
+    
+    <label>Edad:</label>
+    <input type="number" id="edad">
+
+    <label>Género:</label>
+    <select id="genero">
+        <option value="Drama">Drama</option>
+        <option value="Comedia">Comedia</option>
+        <option value="Musical">Musical</option>
+        <option value="Crimen">Crimen</option>
+    </select>
+
+    <button onclick="recomendarPelicula()">Generar Recomendación</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function recomendarPelicula() {
+            let edadInput = document.getElementById("edad").value;
+            let genero = document.getElementById("genero").value;
+            let resultado = document.getElementById("resultado");
+
+            let edad = parseInt(edadInput);
+            let pelicula = "";
+
+            switch (genero) {
+                
+                case "Drama":
+                    if (edad < 13) {
+                        pelicula = "Casablanca";
+                    } else if (edad >= 13 && edad <= 15) {
+                        pelicula = "The Shawshank Redemption";
+                    } else {
+                        pelicula = "Taxi Driver";
+                    }
+                    break;
+
+                case "Comedia":
+                    if (edad < 13) {
+                        pelicula = "Back to the Future";
+                    } else if (edad >= 13 && edad <= 15) {
+                        pelicula = "The Truman Show";
+                    } else {
+                        pelicula = "The Wolf of Wall Street";
+                    }
+                    break;
+
+                case "Musical":
+                    if (edad < 13) {
+                        pelicula = "La La Land";
+                    } else if (edad >= 13 && edad <= 15) {
+                        pelicula = "Les Misérables";
+                    } else {
+                        pelicula = "The Rocky Horror Picture Show";
+                    }
+                    break;
+
+                case "Crimen":
+                    if (edad < 13) {
+                        pelicula = "No hay opciones";
+                    } else if (edad >= 13 && edad <= 15) {
+                        pelicula = "El Secreto de sus Ojos";
+                    } else {
+                        pelicula = "The Godfather";
+                    }
+                    break;
+            }
+
+            resultado.innerText = pelicula;
+        }
+    </script>
+
+</body>
+</html>

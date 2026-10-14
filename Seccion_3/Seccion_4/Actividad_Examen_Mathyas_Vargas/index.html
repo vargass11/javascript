@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>reposicion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .box {
+            background: white;
+            width: 380px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #bbb;
+        }
+        h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 5px;
+        }
+        .btn-zone {
+            text-align: center;
+            margin-top: 15px;
+        }
+        button {
+            padding: 6px 12px;
+            margin: 4px;
+        }
+        #res {
+            margin-top: 15px;
+            padding: 10px;
+            background: #eee;
+            border-left: 4px solid green;
+            display: none; 
+        }
+        .err-msg {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Recomendaciones Recreativas</h2>
+        
+        <div class="form-group">
+            <label>Presupuesto disponible (₡):</label>
+            <input type="number" id="p_plata">
+        </div>
+
+        <div class="form-group">
+            <label>Cantidad de personas:</label>
+            <input type="number" id="p_cant">
+        </div>
+
+        <div class="form-group">
+            <label>Tipo de actividad:</label>
+            <select id="p_tipo">
+                <option value="">--elegir--</option>
+                <option value="Deportes">Deportes</option>
+                <option value="Entretenimiento">Entretenimiento</option>
+                <option value="Turismo">Turismo</option>
+                <option value="Actividades familiares">Actividades familiares</option>
+            </select>
+        </div>
+
+        <div class="btn-zone">
+            <button type="button" onclick="calcular()">Recomendar</button>
+            <button type="button" onclick="limpiar()">Limpiar</button>
+        </div>
+
+        <div id="error" class="err-msg"></div>
+        <div id="res"></div>
+    </div>
+
+    <script>
+        function calcular() {
+            var valPlata = document.getElementById('p_plata').value;
+            var valCant = document.getElementById('p_cant').value;
+            var valTipo = document.getElementById('p_tipo').value;
+            
+            var divErr = document.getElementById('error');
+            var divRes = document.getElementById('res');
+
+            divErr.innerHTML = "";
+            divRes.innerHTML = "";
+            divRes.style.display = "none";
+
+            if (valPlata === "" || valCant === "" || valTipo === "") {
+                divErr.innerHTML = "Error: hay campos vacios.";
+                return;
+            }
+
+            var dinero = parseFloat(valPlata);
+            var personas = parseInt(valCant);
+
+            if (isNaN(dinero) || isNaN(personas)) {
+                divErr.innerHTML = "Error: meta numeros validos.";
+                return;
+            }
+            if (dinero < 0) {
+                divErr.innerHTML = "Error: no se aceptan presupuestos negativos.";
+                return;
+            }
+            if (personas <= 0) {
+                divErr.innerHTML = "Error: la gente tiene que ser mayor a cero.";
+                return;
+            }
+
+            var rec = "";
+
+            switch (valTipo) {
+                case "Deportes":
+                    if (dinero < 8000) {
+                        rec = "Caminata recreativa";
+                    } else if (dinero >= 8000 && dinero <= 15000) {
+                        rec = "Alquiler de cancha";
+                    } else {
+                        rec = "Actividad deportiva especializada";
+                    }
+                    break;
+
+                case "Entretenimiento":
+                    if (dinero < 8000) {
+                        rec = "Actividad económica";
+                    } else if (dinero >= 8000 && dinero <= 15000) {
+                        rec = "Entrada al cine";
+                    } else {
+                        rec = "Concierto o espectáculo";
+                    }
+                    break;
+
+                case "Turismo":
+                    if (dinero < 8000) {
+                        rec = "Visita a parque público";
+                    } else if (dinero >= 8000 && dinero <= 15000) {
+                        rec = "Tour local";
+                    } else {
+                        rec = "Excursión de día completo";
+                    }
+                    break;
+
+                case "Actividades familiares":
+                    if (dinero < 8000) {
+                        rec = "Picnic familiar";
+                    } else if (dinero >= 8000 && dinero <= 15000) {
+                        rec = "Salida recreativa";
+                    } else {
+                        rec = "Parque temático o actividad especial";
+                    }
+                    break;
+            }
+
+            var desc = 0;
+
+            if (personas >= 1 && personas <= 4) {
+                desc = 0;
+            } else if (personas >= 5 && personas <= 8) {
+                desc = 10;
+            } else if (personas >= 9) {
+                desc = 15;
+            }
+
+            var montoDesc = dinero * (desc / 100);
+            var neto = dinero - montoDesc;
+
+            divRes.innerHTML = "<p><b>Actividad recomendada:</b> " + rec + "</p>" +
+                               "<p><b>Cantidad de personas:</b> " + personas + "</p>" +
+                               "<p><b>Descuento grupal:</b> " + desc + "%</p>" +
+                               "<p><b>Monto del descuento:</b> ₡" + montoDesc + "</p>" +
+                               "<p><b>Presupuesto final:</b> ₡" + neto + "</p>";
+
+            divRes.style.display = "block";
+        }
+
+        function limpiar() {
+            document.getElementById('p_plata').value = "";
+            document.getElementById('p_cant').value = "";
+            document.getElementById('p_tipo').value = "";
+            document.getElementById('error').innerHTML = "";
+            document.getElementById('res').style.display = "none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            background:rgba(255, 136, 0, 0.479);
+            padding: 20px;
+        }
+        .principal {
+            background: rgba(135, 207, 235, 0.952);
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid blue;
+        }
+        h2 {
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 12px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 5px;
+        }
+        .btn-box {
+            text-align: center;
+            margin-top: 15px;
+        }
+        button {
+            padding: 6px 12px;
+            margin: 4px;
+            cursor: pointer;
+        }
+        #pantalla-resultado {
+            margin-top: 15px;
+            padding: 10px;
+            background: #eeeeee;
+            border-left: 4px solid black;
+            display: none; 
+        }
+        .txt-error {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
