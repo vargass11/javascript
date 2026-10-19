@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loop For 4</title>
+</head>
+<body>
+
+    Ingrese su número: <input type="number" id="num">
+    <button onclick="testLoop()">Ejecutar función</button>
+
+
+    <div id="resultado" style="margin-top: 15px; font-family: monospace; white-space: pre;"></div>
+
+    <script>
+        function testLoop() {
+            let numero = document.getElementById("num").value;
+            let contenedor = document.getElementById("resultado");
+            
+
+            contenedor.innerHTML = ""; 
+
+         
+            if (numero === "") {
+                contenedor.innerHTML = "Por favor, escribe un número.";
+                return;
+            }
+
+           
+            for (let i = 1; i <= 10; i++) {
+                contenedor.innerHTML += numero + " x " + i + " = " + (numero * i) + "<br>";
+            }
+        }
+    </script>
+
+</body>
+</html>

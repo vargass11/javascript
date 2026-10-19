@@ -1,0 +1,18 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            function testLoop(vueltasTotales){
+                let contador = 1;
+                do{
+                    document.write("<h1>Vuelta número: " + contador + "</h1>");
+                    contador++;
+                } while (contador <= vueltasTotales);
+            }
+
+            let numeroVueltas = parseInt(prompt("Dime el número de vueltas"));
+            testLoop(numeroVueltas);
+        </script>
+    </body>
+</html>

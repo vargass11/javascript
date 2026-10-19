@@ -1,0 +1,20 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            let entrada;
+
+            do {
+                entrada = prompt("Introduce un texto (o escribe 'salir' para terminar):");
+                
+                if (entrada !== "salir") {
+                    document.write("<p>Ingresaste: " + entrada + "</p>");
+                }
+
+            } while (entrada !== "salir");
+
+            document.write("<h1>¡Ciclo terminado correctamente!</h1>");
+        </script>
+    </body>
+</html>

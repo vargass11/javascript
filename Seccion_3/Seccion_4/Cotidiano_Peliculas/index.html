@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotidiano Cine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Recomendador de Películas</h1>
+        <p class="subtitulo">Ingresa tu edad y selecciona el género que más te guste para recomendarte tu película ideal.</p>
+
+        <div class="formulario">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" placeholder="Ej. 15">
+
+            <label for="genero">Género:</label>
+            <select id="genero">
+                <option value="Drama">Drama</option>
+                <option value="Comedia">Comedia</option>
+                <option value="Musical">Musical</option>
+                <option value="Crimen">Crimen</option>
+            </select>
+
+            <div class="botones">
+                <button id="btnRecomendar" onclick="recomendarPelicula()">Recomendar</button>
+                <button id="btnReiniciar" onclick="reiniciarFormulario()">Reiniciar</button>
+            </div>
+        </div>
+
+        <div class="resultado-box">
+            <h3>Nuestra recomendación:</h3>
+            <p id="resultado">Aquí aparecerá tu película...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
