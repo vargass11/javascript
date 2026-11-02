@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Break & Continue</title>
+        <style background="red"></style>
+    </head>
+    <body>
+        <script>
+            let miArray = [ 9, 5, 6, 2, 7 ];
+
+            function testLoop(numeros) {
+                for (let numero of numeros) {
+                    if (numero <= 5) {
+                        continue;
+                    }
+                    console.log(numero);
+                }
+            }
+
+            testLoop(miArray);
+        </script>
+    </body>
+</html>

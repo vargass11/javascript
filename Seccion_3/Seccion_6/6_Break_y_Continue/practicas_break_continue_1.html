@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Break & Continue</title>
+        <style background="red"></style>
+    </head>
+    <body>
+        <script>
+            let miArray = [ 'A', 'A', 'B', 'A', 'B', 'B', 'A' ];
+
+            function testLoop(letras) {
+                for (let letra of letras) {
+                    if (letra === 'B') {
+                        break;
+                    }
+                    console.log(letra);
+                }
+            }
+
+            testLoop(miArray);
+        </script>
+    </body>
+</html>

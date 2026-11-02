@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Etiquetas</title>
+        <style background="red"></style>
+    </head>
+    <body>
+        <script>
+            let miArray = [ [ 2, 4, 5 ], [ 3, 0, 6 ], [ 9, 4, 7 ] ];
+
+            function testLoop(matriz) {
+                buclePrincipal:
+                for (let fila of matriz) {
+                    for (let numero of fila) {
+                        if (numero === 0) {
+                            break buclePrincipal;
+                        }
+                        console.log(numero);
+                    }
+                }
+            }
+
+            testLoop(miArray);
+        </script>
+    </body>
+</html>

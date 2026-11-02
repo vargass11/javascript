@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loop For Of</title>
+    </head>
+    <body>
+        <script>
+            let miArray = [ 5, 9, 6, 4, 8 ];
+            let suma = 0;
+
+            function testLoop(numeros) {
+                for (let numero of numeros) {
+                    suma += numero;
+                }
+                console.log(suma);
+            }
+
+            testLoop(miArray);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 1</title>
+    </head>
+    <body>
+        <script>
+
+
+            function imprimirVueltas(cantidad) {
+                let contador = 1;
+                
+                while (contador <= cantidad) {
+                    document.write("<h3>Vuelta número: " + contador + "</h3>");
+                    contador++;
+                }
+            }
+
+            let vueltasUsuario = prompt("Dime el número de vueltas");
+        
+            let numeroVueltas = parseInt(vueltasUsuario);
+        
+            imprimirVueltas(numeroVueltas);
+        </script>
+    </body>
+</html>

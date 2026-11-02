@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Temperaturas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        main {
+            background-color: white;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h3 {
+            color: #34495e;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 8px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        ul li {
+            background-color: #e8f4fd;
+            color: #2980b9;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            border: 1px solid #bce1f6;
+        }
+        .botones-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #contenedor-resultados {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 5px solid #2ecc71;
+            border-radius: 4px;
+            min-height: 40px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Estación Central</h1>
+    </header>
+
+    <main>
+        <h3>Temperaturas registradas (Últimos 7 días):</h3>
+        <ul id="lista-temperaturas"></ul>
+
+        <div class="botones-container">
+            <button onclick="calcularPromedio()">Calcular promedio</button>
+            <button onclick="temperaturaMaxima()">Temperatura máxima</button>
+            <button onclick="hayDiasFrios()">Consultar días fríos</button>
+        </div>
+
+        <h3>Resultado de la consulta:</h3>
+        <div id="contenedor-resultados">Haz clic en un botón para ver el análisis.</div>
+    </main>
+
+    <script src="clima.js"></script>
+</body>
+</html>
